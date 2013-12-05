@@ -30,5 +30,16 @@ public class InsertStockPage {
 	public void setStockUrl(String url) {
 		this.stockUrl = url;
 	}
-	
+
+    public void fillFeedback(String name, String recipient, String feedback) {
+        pageUtils.fillFormField(STOCK_FORM_ID, name);
+        pageUtils.fillFormField(THRESHOLD_FORM_ID, recipient);
+        pageUtils.fillFormField(TRADEAT_FORM_ID, feedback);
+    }
+
+    public String viewFeedback(String feedback_id) {
+        System.out.println("!!!!!!!!");
+        System.out.println(pageUtils.getElementText(feedback_id));
+        return pageUtils.getElementText(feedback_id);
+    }
 }

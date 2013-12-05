@@ -3,8 +3,8 @@ package org.jbehave.web;
 public class StockForm {
 
 	private String name;
-	private double threshold;
-	private double tradeAt;
+	private String threshold;
+	private String tradeAt;
 
 	public String getName() {
 		return name;
@@ -14,19 +14,19 @@ public class StockForm {
 		this.name = name;
 	}
 
-    public void setThreshold(double threshold){
+    public void setThreshold(String threshold){
         this.threshold = threshold;
     }
 
-	public double getThreshold() {
+	public String getThreshold() {
 		return threshold;
 	}
 
-    public void setTradeAt(double tradeAt){
+    public void setTradeAt(String tradeAt){
         this.tradeAt = tradeAt;
     }
 
-	public double getTradeAt() {
+	public String getTradeAt() {
 		return tradeAt;
 	}
 

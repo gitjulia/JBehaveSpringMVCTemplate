@@ -2,22 +2,18 @@ package org.jbehave.business;
 
 public class Stock {
 
-	private double threshold = 0;
-	private double trade = 0;
+	private String threshold = "0";
+	private String trade = "0";
 	
-	public Stock(double threshold) {
+	public Stock(String threshold) {
 		this.threshold = threshold;
 	}
 	
-	public void setTradeAt(double tradeAt) {
+	public void setTradeAt(String tradeAt) {
 		this.trade = tradeAt;
 	}
 	
 	public StockAlertStatus getStatus() {
-		if(this.trade>this.threshold) {
-			return StockAlertStatus.ON;
-		}
-		
 		return StockAlertStatus.OFF;
 	}
 	

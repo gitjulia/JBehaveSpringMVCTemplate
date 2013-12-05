@@ -41,7 +41,7 @@ public class HomeController {
 		return new ModelAndView("showstatus", "status", stock.getStatus());
 	}
 	
-	public Stock getStock(double threshold, double tradeAt) {
+	public Stock getStock(String threshold, String tradeAt) {
 		return this.tradingService.addNewStock(threshold, tradeAt);
 	}
 	

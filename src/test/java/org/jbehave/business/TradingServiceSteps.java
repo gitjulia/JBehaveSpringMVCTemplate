@@ -18,12 +18,12 @@ public class TradingServiceSteps {
 	private Stock stock;
 	
 	@Given("a stock of symbol <symbol> and a threshold of <threshold>")
-	public void aStock(@Named("symbol")String symbol, @Named("threshold")double threshold) {
-		stock = tradingService.addNewStock(threshold, 0);
+	public void aStock(@Named("symbol")String symbol, @Named("threshold")String threshold) {
+		stock = tradingService.addNewStock(threshold, "0");
 	}
 	
 	@When("the stock is traded at <price>")
-	public void theStockIsTradedAt(@Named("price")double price) {
+	public void theStockIsTradedAt(@Named("price")String price) {
 		stock.setTradeAt(price);
 	}
 	

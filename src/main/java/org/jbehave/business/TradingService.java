@@ -3,6 +3,6 @@ package org.jbehave.business;
 
 public interface TradingService {
 
-	public Stock addNewStock(double threshold, double tradeAt);
+	public Stock addNewStock(String threshold, String tradeAt);
 	
 }
