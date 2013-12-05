@@ -1,9 +1,9 @@
 package org.jbehave.web;
 
-import static org.openqa.selenium.By.id;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import static org.openqa.selenium.By.id;
 
 public class PageUtils {
 
@@ -32,5 +32,9 @@ public class PageUtils {
 	public void setWebDriver(WebDriver webDriver) {
 		this.webDriver = webDriver;
 	}
+
+    public void close() {
+        this.webDriver.quit();
+    }
 	
 }

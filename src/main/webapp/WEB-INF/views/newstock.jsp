@@ -42,5 +42,14 @@
 			</tr>
 		</table>
 	</form:form>
+
+
+    <div id="feedback_1">
+        Yay!
+    </div>
+
+    <div id="recipient_1">
+        <c:out value="${status.recipient}"></c:out>
+    </div>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class HomeController {
 	public ModelAndView submitForm(@ModelAttribute("stockInfo")StockForm stockForm) {
 
 		Stock stock = getStock(stockForm.getThreshold(), stockForm.getTradeAt());
-		return new ModelAndView("showstatus", "status", stock.getStatus());
+		return new ModelAndView("newstock");
 	}
 	
 	public Stock getStock(String threshold, String tradeAt) {

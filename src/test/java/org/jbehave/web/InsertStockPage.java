@@ -16,6 +16,10 @@ public class InsertStockPage {
 	public void open() {
 		pageUtils.open(this.stockUrl);
 	}
+
+    public void close() {
+        pageUtils.close();
+    }
 	
 	public void fillForm(String stockName, String threshold, String tradeAt) {
 		pageUtils.fillFormField(STOCK_FORM_ID, stockName);
@@ -38,8 +42,10 @@ public class InsertStockPage {
     }
 
     public String viewFeedback(String feedback_id) {
-        System.out.println("!!!!!!!!");
-        System.out.println(pageUtils.getElementText(feedback_id));
         return pageUtils.getElementText(feedback_id);
+    }
+
+    public String viewRecipient(String recipient_id) {
+        return pageUtils.getElementText(recipient_id);
     }
 }

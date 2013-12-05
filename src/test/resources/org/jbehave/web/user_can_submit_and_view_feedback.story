@@ -1,5 +1,4 @@
 Scenario: User can submit feedback
-Given I start the web application
 When I submit a feedback with my name, the recipient’s name and the feedback
 Then I should see the feedback
 And I should see the recipient’s name
