@@ -13,32 +13,32 @@ public class TradingServiceWebSteps {
 
     @BeforeStories
     public void openApp() {
-        insertStockPage.open();
+        insertFeedbackPage.open();
     }
 
     @AfterStories
     public void tearDown() {
-        insertStockPage.close();
+        insertFeedbackPage.close();
     }
 
 	@Autowired
-	@Qualifier("insertStockPage")
-	private InsertStockPage insertStockPage;
+	@Qualifier("insertFeedbackPage")
+	private InsertFeedbackPage insertFeedbackPage;
 
     @When("I submit a feedback with my name, the recipient’s name and the feedback")
     public void submitCompleteFeedback() {
-        insertStockPage.fillFeedback("myName", "anotherPerson", "Yay!");
-        insertStockPage.submitForm();
+        insertFeedbackPage.fillFeedback("myName", "anotherPerson", "Yay!");
+        insertFeedbackPage.submitForm();
     }
 
     @Then("I should see the feedback")
     public void viewFeedback() {
-        assertThat(insertStockPage.viewFeedback("feedback_1"), containsString("Yay!"));
+        assertThat(insertFeedbackPage.viewFeedback("feedback_1"), containsString("Yay!"));
     }
 
     @Then("I should see the recipient’s name")
     public void viewRecipient() {
-        assertThat(insertStockPage.viewRecipient("recipient_1"), containsString("anotherPerson"));
+        assertThat(insertFeedbackPage.viewRecipient("recipient_1"), containsString("anotherPerson"));
     }
 
 

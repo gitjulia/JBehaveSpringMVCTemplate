@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form id="stock" modelAttribute="stockInfo">
+	<form:form id="feedback_form" modelAttribute="feedbackInfo">
 		<table>
 			<tr>
 				<td>
-					Stock:
+					Name:
 				</td>
 				<td>
 					<form:input path="name"/>
@@ -21,18 +21,18 @@
 			</tr>
 			<tr>
 				<td>
-					Threshold:
+					Recipient:
 				</td>
 				<td>
-					<form:input path="threshold"/>
+					<form:input path="recipient"/>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Trade At:
+					Feedback:
 				</td>
 				<td>
-					<form:input path="tradeAt"/>
+					<form:input path="feedback"/>
 				</td>
 			</tr>
 			<tr>

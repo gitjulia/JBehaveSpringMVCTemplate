@@ -1,7 +1,7 @@
 package org.jbehave.web;
 
-import org.jbehave.business.Stock;
-import org.jbehave.business.TradingService;
+import org.jbehave.business.Feedback;
+import org.jbehave.business.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ public class HomeController {
 
 
 	@Autowired
-	private TradingService tradingService;
+	private FeedbackService tradingService;
 	
 	
 	/**
@@ -26,7 +26,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String showForm(Model model) {
-		model.addAttribute("stockInfo", new StockForm());
+		model.addAttribute("feedbackInfo", new FeedbackForm());
 		return "newstock";
 	}
 	
@@ -35,14 +35,14 @@ public class HomeController {
 	 * @return view.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.POST )
-	public ModelAndView submitForm(@ModelAttribute("stockInfo")StockForm stockForm) {
+	public ModelAndView submitForm(@ModelAttribute("feedbackInfo")FeedbackForm feedbackForm) {
 
-		Stock stock = getStock(stockForm.getThreshold(), stockForm.getTradeAt());
+		Feedback feedback = getStock(feedbackForm.getRecipient(), feedbackForm.getFeedback());
 		return new ModelAndView("newstock");
 	}
 	
-	public Stock getStock(String threshold, String tradeAt) {
-		return this.tradingService.addNewStock(threshold, tradeAt);
+	public Feedback getStock(String threshold, String tradeAt) {
+		return this.tradingService.addNewFeedback(threshold, tradeAt);
 	}
 	
 }

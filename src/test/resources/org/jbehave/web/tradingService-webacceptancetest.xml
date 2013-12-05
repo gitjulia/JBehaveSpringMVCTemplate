@@ -14,8 +14,8 @@
 		<property name="webDriver" ref="firefoxDriver"></property>
 	</bean>
 	
-	<bean id="insertStockPage" class="org.jbehave.web.InsertStockPage">
-		<qualifier value="insertStockPage"></qualifier>
+	<bean id="insertFeedbackPage" class="org.jbehave.web.InsertFeedbackPage">
+		<qualifier value="insertFeedbackPage"></qualifier>
 		<property name="stockUrl" value="http://localhost:8080/"></property>
 	</bean>
 	

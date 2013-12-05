@@ -1,10 +1,10 @@
 package org.jbehave.web;
 
-public class StockForm {
+public class FeedbackForm {
 
 	private String name;
-	private String threshold;
-	private String tradeAt;
+	private String recipient;
+	private String feedback;
 
 	public String getName() {
 		return name;
@@ -14,20 +14,20 @@ public class StockForm {
 		this.name = name;
 	}
 
-    public void setThreshold(String threshold){
-        this.threshold = threshold;
+    public void setRecipient(String recipient){
+        this.recipient = recipient;
     }
 
-	public String getThreshold() {
-		return threshold;
+	public String getRecipient() {
+		return recipient;
 	}
 
-    public void setTradeAt(String tradeAt){
-        this.tradeAt = tradeAt;
+    public void setFeedback(String feedback){
+        this.feedback = feedback;
     }
 
-	public String getTradeAt() {
-		return tradeAt;
+	public String getFeedback() {
+		return feedback;
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class StockForm {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		StockForm other = (StockForm) obj;
+		FeedbackForm other = (FeedbackForm) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
