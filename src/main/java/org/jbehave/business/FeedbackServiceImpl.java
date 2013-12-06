@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class FeedbackServiceImpl implements FeedbackService {
 
-	public Feedback addNewFeedback(String threshold, String tradeAt) {
-        Feedback feedback = new Feedback(threshold);
-        feedback.setFeedback(tradeAt);
+	public Feedback addNewFeedback(String sender, String recipient, String feedbackDescription) {
+        Feedback feedback = new Feedback(sender, recipient, feedbackDescription);
         return feedback;
 	}
 

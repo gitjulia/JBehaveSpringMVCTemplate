@@ -41,5 +41,10 @@ public class TradingServiceWebSteps {
         assertThat(insertFeedbackPage.viewRecipient("recipient_1"), containsString("anotherPerson"));
     }
 
+    @Then("I should see my name")
+    public void viewSender() {
+        assertThat(insertFeedbackPage.viewSender("sender_1"), containsString("myName"));
+    }
+
 
 }

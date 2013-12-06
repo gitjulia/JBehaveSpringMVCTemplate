@@ -13,10 +13,10 @@
 		<table>
 			<tr>
 				<td>
-					Name:
+					Sender:
 				</td>
 				<td>
-					<form:input path="name"/>
+					<form:input path="sender"/>
 				</td>
 			</tr>
 			<tr>
@@ -44,12 +44,20 @@
 	</form:form>
 
 
-    <div id="feedback_1">
-        Yay!
+    Sender:
+    <div id="sender_1">
+        <c:out value="${feedback.sender}"></c:out>
     </div>
 
+    Recipient:
     <div id="recipient_1">
-        <c:out value="${status.recipient}"></c:out>
+        <c:out value="${feedback.recipient}"></c:out>
     </div>
+
+    Feedback:
+    <div id="feedback_1">
+        <c:out value="${feedback.feedbackDescription}"></c:out>
+    </div>
+
 </body>
 </html>

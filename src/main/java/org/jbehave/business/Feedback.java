@@ -2,14 +2,27 @@ package org.jbehave.business;
 
 public class Feedback {
 
-	private String recipient = "0";
-	private String feedback = "0";
+	private String sender;
+	private String recipient;
+	private String feedbackDescription;
 	
-	public Feedback(String recipient) {
+	public Feedback(String sender, String recipient, String feedbackDescription) {
+		this.sender = sender;
 		this.recipient = recipient;
+		this.feedbackDescription = feedbackDescription;
+
 	}
-	
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
+
+
+    public String getSender() {
+        return sender;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public String getFeedbackDescription() {
+        return feedbackDescription;
+    }
 }

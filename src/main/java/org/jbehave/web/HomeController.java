@@ -16,12 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-
 	@Autowired
-	private FeedbackService tradingService;
-	
-	
-	/**
+    FeedbackService feedbackService;
+    /**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
@@ -37,13 +34,13 @@ public class HomeController {
 	@RequestMapping(value="/", method=RequestMethod.POST )
 	public ModelAndView submitForm(@ModelAttribute("feedbackInfo")FeedbackForm feedbackForm) {
 
-		Feedback feedback = getStock(feedbackForm.getRecipient(), feedbackForm.getFeedback());
-		return new ModelAndView("newstock");
+		Feedback feedback = feedbackService.addNewFeedback(feedbackForm.getSender(), feedbackForm.getRecipient(), feedbackForm.getFeedback());
+		return new ModelAndView("newstock", "feedback", feedback);
 	}
 	
-	public Feedback getStock(String threshold, String tradeAt) {
-		return this.tradingService.addNewFeedback(threshold, tradeAt);
-	}
-	
+//	public Feedback getFeedback(String threshold, String tradeAt) {
+//		return this.tradingService.addNewFeedback(threshold, tradeAt);
+//	}
+
 }
 

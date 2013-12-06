@@ -2,16 +2,16 @@ package org.jbehave.web;
 
 public class FeedbackForm {
 
-	private String name;
+	private String sender;
 	private String recipient;
 	private String feedback;
 
-	public String getName() {
-		return name;
+	public String getSender() {
+		return sender;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setSender(String sender) {
+		this.sender = sender;
 	}
 
     public void setRecipient(String recipient){
@@ -34,7 +34,7 @@ public class FeedbackForm {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((sender == null) ? 0 : sender.hashCode());
 		return result;
 	}
 
@@ -47,10 +47,10 @@ public class FeedbackForm {
 		if (getClass() != obj.getClass())
 			return false;
 		FeedbackForm other = (FeedbackForm) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (sender == null) {
+			if (other.sender != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!sender.equals(other.sender))
 			return false;
 		return true;
 	}
