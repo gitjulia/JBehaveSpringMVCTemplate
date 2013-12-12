@@ -1,10 +1,5 @@
-Scenario:  trader should be not alerted below recipient and should be alerted above recipient
- 
-Given a feedback of symbol <symbol> and a recipient of <recipient>
-When the feedback is traded at <price>
-Then the alert status should be <status>
-
-Examples:
-|symbol|recipient|price|status|
-|STK1|5|4|OFF|
-|STK1|5|14|ON|
+Scenario: User can submit feedback
+When I submit a feedback with my name, the recipient’s name and the feedback
+Then I should see the feedback
+And I should see the recipient’s name
+And I should see my name

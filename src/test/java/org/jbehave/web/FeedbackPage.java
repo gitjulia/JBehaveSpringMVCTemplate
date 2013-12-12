@@ -2,13 +2,15 @@ package org.jbehave.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class InsertFeedbackPage {
+public class FeedbackPage {
 
 	private static final String SENDER_FORM_ID = "sender";
 	private static final String RECIPIENT_FORM_ID = "recipient";
+	private static final String RECIPIENT_SEARCH_FORM_ID = "recipientSearchFormId";
 	private static final String FEEDBACK_FORM_ID = "feedback";
-	private static final String SUBMIT_FORM_ID = "submit";
-	
+	private static final String SUBMIT_FEEDBACK_FORM_ID = "submitFeedbackButton";
+	private static final String SUBMIT_RECIPIENT_FORM_ID = "submitRecipientButton";
+
 	private String stockUrl;
 	@Autowired
 	private PageUtils pageUtils;
@@ -21,8 +23,9 @@ public class InsertFeedbackPage {
         pageUtils.close();
     }
 	
-	public void submitForm() {
-		pageUtils.submitForm(SUBMIT_FORM_ID);		
+	public void submitFeedbackForm() {
+//		pageUtils.submitForm(SUBMIT_FEEDBACK_FORM_ID);
+        pageUtils.clickButton(SUBMIT_FEEDBACK_FORM_ID);
 	}
 	
 	public void setStockUrl(String url) {
@@ -45,5 +48,14 @@ public class InsertFeedbackPage {
 
     public String viewSender(String senderId) {
         return pageUtils.getElementText(senderId);
+    }
+
+
+    public void fillSearchFeedbackForm(String recipient) {
+        pageUtils.fillFormField(RECIPIENT_SEARCH_FORM_ID, recipient);
+    }
+
+    public void submitSearchFeedbackForm() {
+        pageUtils.clickButton(SUBMIT_RECIPIENT_FORM_ID);
     }
 }

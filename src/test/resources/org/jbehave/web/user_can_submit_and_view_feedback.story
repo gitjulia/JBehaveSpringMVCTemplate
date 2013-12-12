@@ -8,3 +8,8 @@ Scenario: User can view previous feedback
 Given that I have already submitted a feedback
 When I try to submit another feedback
 Then I should see my previous feedback
+
+Scenario: User can view a specific recipient's feedback
+Given that there is feedback for a specific recipient
+When I search for that recipient's feedback
+Then I should see feedback only for that recipient

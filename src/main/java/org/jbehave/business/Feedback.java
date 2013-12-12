@@ -13,7 +13,6 @@ public class Feedback {
 
 	}
 
-
     public String getSender() {
         return sender;
     }
@@ -25,4 +24,5 @@ public class Feedback {
     public String getFeedbackDescription() {
         return feedbackDescription;
     }
+
 }

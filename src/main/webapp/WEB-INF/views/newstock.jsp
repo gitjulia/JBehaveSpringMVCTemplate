@@ -37,27 +37,36 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					 <input id="submit" type="submit" value="Submit" />
+					 <input id="submitFeedbackButton" type="submit" value="Submit" />
 				</td>
 			</tr>
 		</table>
 	</form:form>
 
+    <form name="feedbackRecipientForm" action="/" method="GET" id="feedback_recipient_form">
+        <table>
+            <tr>
+                <td>
+                    <label id="label-for-recipient-search-form-id" for="recipientSearchFormId">Recipient:</label>
+                </td>
+                <td>
+                    <input id="recipientSearchFormId" name="recipientSearchFormId" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="submitRecipientButton" type="submit" name="search" value="Search" />
+                </td>
+            </tr>
+        </table>
+    </form>
 
-    Sender:
-    <div id="sender_1">
-        <c:out value="${feedback.sender}"></c:out>
-    </div>
-
-    Recipient:
-    <div id="recipient_1">
-        <c:out value="${feedback.recipient}"></c:out>
-    </div>
-
-    Feedback:
-    <div id="feedback_1">
-        <c:out value="${feedback.feedbackDescription}"></c:out>
-    </div>
-
+    <c:forEach items="${feedbackList}" var="feedbackContent" varStatus="index">
+        <div id="feedback${index.count}">
+            Sender: <c:out value="${feedbackContent.sender}"></c:out>
+            Recipient: <c:out value="${feedbackContent.recipient}"></c:out>
+            Feedback: <c:out value="${feedbackContent.feedbackDescription}"></c:out>
+        </div>
+    </c:forEach>
 </body>
 </html>
